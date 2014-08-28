@@ -28,7 +28,7 @@ xmlns:fo="http://www.w3.org/1999/XSL/Format">
   </xsl:template>
 
   <xsl:template match="/nmaprun">
-    use nmap2sql;
+    use nmap2web;
     -----------------------------------------------------------------------
     -- generated with nmap2sql.xsl - version <xsl:value-of select="$nmap2sql_version" /> by Hynek Petrak
     -----------------------------------------------------------------------
