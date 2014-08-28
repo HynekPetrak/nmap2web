@@ -2,6 +2,9 @@
 <!-- 
   nmap2sql.xsl stylesheet version 0.1
   Author: Hynek Petrak   
+ 
+  Copyright (c) Hynek Petrak 2014 
+  Distributed under the GPLv3 license
      -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 xmlns:date="http://exslt.org/dates-and-times"
