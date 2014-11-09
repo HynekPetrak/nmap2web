@@ -82,7 +82,7 @@
                             <td style="width: 70%;">
                                 <asp:Label ID="totallbl" runat="server" CssClass="pager-text"></asp:Label>
                                 <asp:ImageButton ID="buttonFirst" AlternateText="First Page"
-                                     CommandName="Page" CommandArgument="0"
+                                     CommandName="Page" CommandArgument="first"
                                     ImageUrl="~/img/first.png" runat="server" />
                                 <asp:ImageButton ID="buttonPrevious" AlternateText="" 
                                     CommandName="Page" CommandArgument="prev"
