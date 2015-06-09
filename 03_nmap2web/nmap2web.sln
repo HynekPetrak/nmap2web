@@ -7,7 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\gpl-3.0.txt = ..\gpl-3.0.txt
 		..\02_nmapxml_to_sql\nmap2sql.xsl = ..\02_nmapxml_to_sql\nmap2sql.xsl
-		q.sql = q.sql
 		..\01_nmap_command\scan.sh = ..\01_nmap_command\scan.sh
 		sql_scripts\tuning.sql = sql_scripts\tuning.sql
 		sql_scripts\views.sql = sql_scripts\views.sql
