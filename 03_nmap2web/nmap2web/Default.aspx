@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="nmap2web.Default" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="nmap2web.Default" %>
 
 <!DOCTYPE html>
 
@@ -49,18 +50,20 @@
     </script>
 </head>
 <body>
+    <asp:SqlDataSource EnableCaching="false" runat="server" ID="BookSource" ConnectionString='<%$ ConnectionStrings:nmap2webdb %>' SelectCommand="SELECT [name], [search], [searchenc] FROM [bookmarks]"></asp:SqlDataSource>
     <form id="form1" runat="server" action="Default.aspx">
         <header>
             <div class="content-wrapper">
-                <h1>nmap2web metadata search engine</h1>
-                <asp:TextBox ID="What" runat="server" Width="387px"></asp:TextBox><asp:Button ID="Search" runat="server" Text="Search" OnClick="Search_Click" />
+                <h3>nmap2web metadata search engine</h3>
+                <asp:TextBox ID="What" runat="server" Width="387px" ToolTip="Hint: net:10.134.5 script:ftp-anon port:80,443 contain !donot"></asp:TextBox><asp:Button ID="Search" runat="server" Text="Search" OnClick="Search_Click" />
                 <span>
-                    <asp:TextBox ID="Bookname" runat="server" Width="200px" Style="display: none;"></asp:TextBox><asp:Button ID="Bookmark" runat="server" Text="Bookmark" OnClientClick="BClick(); return false;" /><asp:Button ID="CancelBtn" runat="server" Text="Cancel" OnClientClick="CClick(); return false;" Style="display: none;" /></span>
-                <br />
-                Hint: net:10.134.5 script:ftp-anon port:80,443 contain !donot 
+                    <asp:TextBox ID="Bookname" runat="server" Width="200px" Style="display: none;"></asp:TextBox>
+                    <asp:Button ID="Bookmark" runat="server" Text="Bookmark" OnClientClick="BClick(); return false;" /><asp:Button ID="CancelBtn" runat="server" Text="Cancel" OnClientClick="CClick(); return false;" Style="display: none;" />
+                </span>
+                <asp:DropDownList runat="server" ID="BookmarksList" DataSourceID="BookSource" AutoPostBack="true"
+                         DataTextField="name" DataValueField="search" OnSelectedIndexChanged="BookmarksList_SelectedIndexChanged"></asp:DropDownList>
                 <asp:Label ID="EmptyResultLabel" runat="server" ForeColor="Red"></asp:Label>
             </div>
-            
         </header>
 
         <div class="main-content">

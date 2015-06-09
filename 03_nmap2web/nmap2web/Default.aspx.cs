@@ -49,6 +49,7 @@ namespace nmap2web {
                 What.Text = w;
                 ReBind();
             }
+            //BookSource.DataBind();
         }
 
         List<string> to_highlight = new List<string>();
@@ -155,7 +156,7 @@ namespace nmap2web {
 
         protected string Sanitize(string inputText) {
             string s;
-            s = HttpUtility.HtmlEncode(inputText.Trim().Truncate(1024));
+            s = HttpUtility.HtmlEncode(inputText.Trim().Truncate(204800));
             s = s.Replace("\n", "<br/>").Replace("\r", "");
             return s;
         }
@@ -182,7 +183,9 @@ namespace nmap2web {
             } catch (Exception ex) {
                 return "Error occured: " + ex.Message;
             }
-                    
+            
+            
+        
             return "Saved '" +value+ "' as '"+ name +"'";
         }
 
@@ -251,7 +254,7 @@ namespace nmap2web {
                     string _connStr = ConfigurationManager.ConnectionStrings["nmap2webdb"].ConnectionString;
 
                     using (SqlConnection conn = new SqlConnection(_connStr)) {
-                        string sql = "SELECT name FROM hostnames WHERE address = @address";
+                        string sql = "SELECT distinct name FROM hostnames WHERE address = @address";
                         using (SqlCommand cmd = new SqlCommand(sql, conn)) {
                             SqlParameter prm = new SqlParameter("@address", addr.Text);
                             cmd.Parameters.Add(prm);
@@ -322,6 +325,12 @@ namespace nmap2web {
             //DropDownList sizeList = (DropDownList)pagerRow.Cells[0].FindControl("SizeDropDownList");
             DropDownList sizeList = (DropDownList)sender;
             Results.PageSize = Convert.ToInt32(sizeList.SelectedValue);
+            ReBind();
+        }
+
+        protected void BookmarksList_SelectedIndexChanged(object sender, EventArgs e) {
+            DropDownList bookList = (DropDownList)sender;
+            What.Text = bookList.SelectedValue;
             ReBind();
         }
     }
