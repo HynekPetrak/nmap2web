@@ -1,6 +1,8 @@
 # nmap2web
 Full text search engine for nmap results. Written in C# ASP.NET
 
+Full text search and combinations of commands may be helpful for pen-testing or vulnerability scanning. 
+
 ## Workflow
 
 Scan a network range with your favourite nmap command. Use the `-oA filename` or `-oX filename` to save the results into an XML file.
