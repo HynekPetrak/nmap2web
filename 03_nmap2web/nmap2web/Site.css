@@ -19,6 +19,16 @@ body {
     background-color:yellow;
 }
 
+div.scrollable {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    max-height:500px;
+    max-width: 50%;
+}
+
 .totalentries {
     font-size: .85em;
     float: right;

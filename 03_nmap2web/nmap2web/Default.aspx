@@ -163,9 +163,9 @@
                         </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Output" SortExpression="output" FooterText="Output">
-                        <ItemTemplate>
+                        <ItemTemplate><div class="scrollable">
                             <%# HighlightText(Eval("output").ToString())  %>
-                        </ItemTemplate>
+                        </div></ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
