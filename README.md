@@ -1,5 +1,5 @@
 # nmap2web
-Full text search engine for nmap  results. Written in C# ASP.NET
+Full text search engine for nmap results. Written in C# ASP.NET
 
 ## Workflow
 
@@ -42,7 +42,26 @@ Use may use the commands below or any combination of them:
 - **net:a.b.c** - shows all entries for the subnet a.b.c.\*
 - **port:aaa,bbb** - shows all entries for a network port aaa or bbb, e.g. 80,443 for http/https
 
-## Screenshots / Examples
+## Examples
+
+Rsync public shares exporting root filesystem:
+
+    script:rsync root
+
+Samba shares on the 192.168.0.0/16 subnet:
+
+    samba net:192.168
+  
+Home folders published via nfs:
+
+    script:nfs-ls home
+
+Find users keyword everywhere except ldap and samba shares
+
+    users !script:ldap,smb
+
+
+## Screenshots 
 
 _(The IP addresses and hostnames are masked)_
 
