@@ -40,4 +40,4 @@ __Detect available nfs servers__
 ![detectnfs.png](images/screen_detectnfs.png)
 
 __Detect host with heartbleed bug__
-![detectheartbleed.png](images/screen_detectheatbleed.png)
+![detectheartbleed.png](images/screen_detectheartbleed.png)
