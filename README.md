@@ -3,7 +3,7 @@ Full text search engine for nmap results. Written in C# ASP.NET
 
 Full text search and combinations of commands may be helpful for pen-testing or vulnerability scanning. 
 
-(nmap2sql.xsl)[nmap2sql.xsl] converts nmap's XML output into SQL statements.
+[nmap2sql.xsl](nmap2sql.xsl) XSLT converts nmap's XML output into SQL statements.
 
 ## Workflow
 
